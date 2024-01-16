@@ -26,6 +26,7 @@ export default class Order {
     getTaxes (date: Date) {
         let taxes = 0;
         for (const item of this.items) {
+            // faz verificação para saber se o tipo é TaxItem pq Water é do tipo Item e não TaxItem e não calcula taxa
             if (item instanceof TaxItem) {
                 taxes += item.calculateTaxes(date);
             }
